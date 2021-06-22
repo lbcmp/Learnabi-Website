@@ -1,0 +1,412 @@
+footer {
+    width:100%;
+    height:75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(34, 25, 93);
+    color:white;
+}
+
+footer h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+footer i {
+    text-decoration: none;
+    color:white;
+}
+
+footer i:visited {
+    color:white;
+}
+
+/*Home*/
+#home-header {
+    width:100%;
+    height:500px;
+    background-color: rgb(34, 25, 93);
+
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+
+#home-title {
+    width:100%;
+    color:white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: left;
+
+    margin-right:125px;
+    position: absolute;
+    right:0;
+    z-index:1000;
+}
+
+#home-title div {
+    text-align: right;
+}
+
+#home-title h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5.5rem;
+}
+
+#home-header-div {
+    width:100%;
+    height:100%;
+}
+
+#home-header-div img {
+    max-width: 100%;
+    min-width: 100%;
+    height:100%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom:none;
+    margin: 30px 20px;
+    font-size: 2.3rem;
+}
+
+#home-brief-goal{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding:20px 0;
+    background-color: rgba(43, 151, 141,0.8);
+}
+
+#home-goal-description {
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right:20px;
+    padding:30px;
+}
+
+#home-goal-description div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#home-goal-description h2 {
+    font-size: 1.75rem;
+    margin-right:10px;
+}
+
+#home-goal-description p {
+    font-size: 1.4rem;
+}
+
+#home-goal-description img {
+    width:75px;
+    height:75px;
+    margin-left:20px;
+}
+
+#home-goal-description a {
+    text-decoration: none;
+    color:black;
+    font-size: 1.4rem;
+}
+
+/*--*/
+
+#home-follow-along {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding:50px;
+    background-color: rgb(232, 133, 241);
+}
+
+#home-follow-along ul {
+    width: 50%;
+    font-size: 1.4rem;
+}
+
+#home-social-icons {
+    display: flex;
+    flex-direction: row;
+}
+
+#home-social-icons a {
+    margin:30px;
+    font-size: 4rem;
+    color:rgb(34, 25, 93);
+}
+
+/* Mission */
+
+#mission-header {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#mission-header img {
+    width: 100%;
+}
+
+#mission-description {
+    padding:20px;
+    background-color: rgb(34, 25, 93);
+    border-left:100px groove rgb(43, 113, 115);
+    border-right:100px solid rgb(34, 25, 93);
+}
+
+#mission-description div, #mission-values div {
+    width:80%;
+    margin:0 auto;
+    color:white;
+    font-size: 1.25rem;
+}
+
+#mission-values {
+    padding:20px;
+    background-color: rgb(43, 113, 115);
+    border-left:100px solid rgb(43, 113, 115);
+    border-right:100px ridge rgb(34, 25, 93);
+}
+
+#mission-values #img-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+#mission-values img {
+    width:30%;
+    height:auto;
+    margin:0 5px;
+}
+
+@media (max-width:875px) {
+    footer h1 {
+        font-size: 1.2rem;
+    }
+
+    footer ul {
+        width:35%;
+    }
+
+    /* Home */
+
+    #home-header {
+        height: 350px;
+    }
+
+    #home-title {
+        margin-right:75px;
+    }
+
+    #home-title h1 {
+        font-size: 3.5rem;
+    }
+
+    #home-title h2 {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    #home-goal-description {
+        width:60%;
+    }
+
+    #home-goal-description h2 {
+        font-size: 1.5rem;
+    }
+
+    #home-goal-description p {
+        font-size: 1.2rem;
+    }
+
+    #home-goal-description a {
+        font-size: 1.2rem;
+    }
+
+    #home-goal-img-div img {
+        width:200px;
+    }
+
+    #home-follow-along ul {
+        width: 40%;
+        font-size: 1.2rem;
+    }
+
+    #home-social-icons a {
+        margin:15px;
+        font-size: 3.25rem;
+        color:rgb(34, 25, 93);
+    }
+
+    /* Mission */
+    #mission-description {
+        border-left:70px groove rgb(43, 113, 115);
+        border-right:70px solid rgb(34, 25, 93);
+    }
+    
+    #mission-description div, #mission-values div {
+        width:100%;
+        font-size: 1.1rem;
+    }
+    
+    #mission-values {
+        border-left:70px solid rgb(43, 113, 115);
+        border-right:70px ridge rgb(34, 25, 93);
+    }
+
+    #mission-values #img-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #mission-values img {
+        width:70%;
+        height:30%;
+        margin:5px 0;
+    }
+}
+
+@media (max-width:575px) {
+    footer {
+        justify-content: left;
+    }
+
+    footer h1 {
+        margin-left:10px;
+    }
+
+    footer ul {
+        width:80%;
+    }
+
+    footer i {
+        visibility: hidden;
+    }
+
+    /* Home */
+
+    #home-header {
+        height:250px;
+    }
+
+    #home-title {
+        height:250px;
+        justify-content: flex-end;
+        margin-right:30px;
+        margin-bottom:30px;
+    }
+
+    #home-title h1 {
+        font-size: 2.7rem;
+    }
+
+    #home-title h2 {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    #home-brief-goal {
+        flex-direction: column;
+    }
+
+    #home-goal-description {
+        width:100%;
+    }
+
+    #home-goal-description h2 {
+        font-size: 1.5rem;
+    }
+
+    #home-goal-description p {
+        font-size: 1.15rem;
+    }
+
+    #home-goal-description a {
+        font-size: 1.15rem;
+    }
+
+    #home-goal-img-div img {
+        width:100%;
+    }
+
+    #home-follow-along {
+        padding:20px;
+    }
+
+    #home-follow-along ul {
+        width: 80%;
+        padding-left:20px;
+        font-size: 1.2rem;
+    }
+
+    #home-social-icons {
+        flex-direction: column;
+    }
+
+    #home-social-icons a {
+        font-size: 2.5rem;
+    }
+
+    /* Mission */
+    #mission-header {
+        height:0px;
+        visibility: hidden;
+    }
+
+    #mission-description {
+        border-top: 25px groove rgb(43, 113, 115);
+        border-left:none;
+        border-right:none;
+    }
+    
+    #mission-description div, #mission-values div {
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    #mission-values {
+        border-top:25px groove rgb(34, 25, 93);
+        border-left:none;
+        border-right:none;
+    }
+
+    #mission-values #img-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #mission-values img {
+        width:85%;
+        height:30%;
+        margin:5px 0;
+    }
+}

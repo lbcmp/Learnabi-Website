@@ -12,8 +12,13 @@ import UserLoginButton from './components/user/userLoginButton';
 
 const App = () => {
   return (
+
     <React.Fragment>
       <UserLoginButton />
+
+    
+    <HashRouter>
+
       <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -22,8 +27,12 @@ const App = () => {
         <Route path="/ourTeam" component={OurTeam} />
         <Route path="/contact" component={Contact} />
       </Switch>
+</HashRouter>
     </React.Fragment>
     
+
+    
+
   );
 };
 

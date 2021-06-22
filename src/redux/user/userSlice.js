@@ -15,6 +15,7 @@ export const userSlice = createSlice({
       state.userPhotoUrl = action.payload.photoUrl;
       state.userId = action.payload.user_id;
     },
+
     userReset: (state) => {
       state.userName = null;
       state.userEmail = null;
