@@ -198,6 +198,66 @@ footer i:visited {
     margin:0 5px;
 }
 
+/* About Us */
+#aboutUs-header {
+    width:100%;
+    height:500px;
+    background-color: rgb(43, 113, 115);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutUs-header #left {
+    background: url('../Images/cofounders.png') no-repeat center / cover;
+    width:550px;
+    height:80%;
+}
+
+#aboutUs-header #right {
+    background-color: rgb(34, 25, 93);
+    color:white;
+    width:350px;
+    height:300px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:-30px;
+}
+
+#aboutUs-origin {
+    width:100%;
+    background-color: rgba(242, 131, 113, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+#aboutUs-origin #text {
+    width:calc(100% - 200px);
+    margin:20px 50px;
+    font-size: 1.25rem;
+}
+
+#aboutUs-origin #triangle {
+    position: absolute;
+    bottom:0;
+    right:0;
+    width: 100px;
+    height:100%;
+}
+
+#aboutUs-origin img {
+    position: absolute;
+    bottom:0;
+    right:0;
+    width:100px;
+    height:100%;
+}
+
 @media (max-width:875px) {
     footer h1 {
         font-size: 1.2rem;
@@ -287,6 +347,35 @@ footer i:visited {
         width:70%;
         height:30%;
         margin:5px 0;
+    }
+
+    /* About Us */
+    #aboutUs-header {
+        height:400px;
+    }
+    
+    #aboutUs-header #left {
+        width:375px;
+    }
+    
+    #aboutUs-header #right {
+        width:250px;
+        height:225px;
+        margin-left:-20px;
+    }
+
+    #aboutUs-origin #text {
+        width:calc(100% - 100px);
+        margin:20px;
+        font-size: 1.25rem;
+    }
+
+    #aboutUs-origin #triangle {
+        width: 70px;
+    }
+    
+    #aboutUs-origin img {
+        width:70px;
     }
 }
 
@@ -409,4 +498,36 @@ footer i:visited {
         height:30%;
         margin:5px 0;
     }
+
+    /* About Us */
+    #aboutUs-header {
+        height:400px;
+        flex-direction: column;
+    }
+    
+    #aboutUs-header #left {
+        width:300px;
+    }
+    
+    #aboutUs-header #right {
+        width:250px;
+        height:225px;
+        margin-left:0;
+        margin-top:-20px;
+    }
+
+    #aboutUs-origin {
+        border-top:25px groove rgb(242, 131, 113);
+    }
+
+    #aboutUs-origin #text {
+        width:100%;
+        font-size: 1rem;
+    }
+
+    #aboutUs-origin #triangle {
+        width:0px;
+        visibility: hidden;
+    }
+    
 }
