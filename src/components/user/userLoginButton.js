@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   auth,
   providerGoogle,
@@ -35,20 +35,21 @@ const UserLoginButton = () => {
   useEffect(() => {
     let mounted = true;
     if (mounted) {
-      function dispatchUser(name, email, photo, id) {
-        dispatch(
-          userState({
-            displayName: name,
-            email: email,
-            photoUrl: photo,
-            user_id: id,
-          })
-        );
-      }
       auth.onAuthStateChanged(async (userAuth) => {
+        function dispatchUser(name, email, photo, id) {
+          dispatch(
+            userState({
+              displayName: name,
+              email: email,
+              photoUrl: photo,
+              user_id: id,
+            })
+          );
+        }
+
         if (!userAuth) return;
         const userRef = firestore.doc(`learnabiUsers/${userAuth.uid}`);
-        // console.log(userAuth);
+        console.log(userAuth);
         const snapShot = await userRef.get();
         // .exists checks the document for validation => false = not created
         if (!snapShot.exists) {
@@ -75,10 +76,6 @@ const UserLoginButton = () => {
         }
       });
     }
-
-    return () => {
-      mounted = false;
-    };
   }, [dispatch]);
 
   // reverse substring
@@ -103,14 +100,12 @@ const UserLoginButton = () => {
     em === "gmail.com" && user !== null ? (
       <div>
         <CustomButton styleC={true} clicked={signOut} btnName="Sign Out" />
-        <CustomButton styleC={false} btnName="Sign In With Github" dis={true} />
       </div>
     ) : null;
 
   let githubActive =
     em !== "gmail.com" && user !== null ? (
       <div>
-        <CustomButton styleC={true} btnName="Sign In With Google" dis={true} />
         <CustomButton styleC={false} clicked={signOut} btnName="Sign Out" />
       </div>
     ) : null;

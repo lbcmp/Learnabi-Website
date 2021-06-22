@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CustomButton = ({ btnName, styleC, clicked, dis }) => {
+const CustomButton = ({ btnName, styleC, clicked}) => {
   // styleC: true = google
   const classes = useStyles();
 
@@ -38,7 +38,6 @@ const CustomButton = ({ btnName, styleC, clicked, dis }) => {
         variant="contained"
         onClick={clicked}
         className={styleC ? classes.googleButton : classes.githubButton}
-        disabled={dis}
       >
         {btnName}
       </Button>
