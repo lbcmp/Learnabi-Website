@@ -16,9 +16,6 @@ const App = () => {
     <React.Fragment>
       <UserLoginButton />
 
-    
-    <HashRouter>
-
       <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -27,12 +24,7 @@ const App = () => {
         <Route path="/ourTeam" component={OurTeam} />
         <Route path="/contact" component={Contact} />
       </Switch>
-</HashRouter>
     </React.Fragment>
-    
-
-    
-
   );
 };
 
