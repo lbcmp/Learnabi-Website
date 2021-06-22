@@ -22,7 +22,7 @@ class Home extends Component {
                     </div>
                 </header>
 
-                <h1 className="home-section-title">An app that lets students learn at their own pace</h1>
+                <h1 className="section-title">An app that lets students learn at their own pace</h1>
                 <section id="home-brief-goal">
 
                     <div id="home-goal-description">
@@ -50,7 +50,7 @@ class Home extends Component {
 
                 </section>
 
-                <h1 className="home-section-title">Follow along our journey</h1>
+                <h1 className="section-title">Follow along our journey</h1>
                 <section id="home-follow-along"> 
                     <ul>
                         <li>Follow us on Instagram and Twitter for the latest updates</li>

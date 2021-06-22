@@ -1,20 +1,25 @@
-* {
-    box-sizing: border-box;
-    font-family: 'Roboto Slab', serif;
-    margin:0;
-    padding:0;
-}
-
-body {
-    background-color: rgb(218, 207, 237);
-}
-
-.page-wrapper {
+footer {
     width:100%;
+    height:75px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    background-color: rgb(34, 25, 93);
+    color:white;
+}
+
+footer h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+footer i {
+    text-decoration: none;
+    color:white;
+}
+
+footer i:visited {
+    color:white;
 }
 
 /*Home*/
@@ -64,7 +69,7 @@ body {
     height:100%;
 }
 
-.home-section-title {
+.section-title {
     text-align: center;
     margin-bottom:none;
     margin: 30px 20px;
@@ -146,31 +151,64 @@ body {
     color:rgb(34, 25, 93);
 }
 
-footer {
+/* Mission */
+
+#mission-header {
     width:100%;
-    height:75px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+}
+
+#mission-header img {
+    width: 100%;
+}
+
+#mission-description {
+    padding:20px;
     background-color: rgb(34, 25, 93);
-    color:white;
+    border-left:100px groove rgb(43, 113, 115);
+    border-right:100px solid rgb(34, 25, 93);
 }
 
-footer h1 {
-    font-family: 'Poppins', sans-serif;
+#mission-description div, #mission-values div {
+    width:80%;
+    margin:0 auto;
+    color:white;
+    font-size: 1.25rem;
 }
 
-footer i {
-    text-decoration: none;
-    color:white;
+#mission-values {
+    padding:20px;
+    background-color: rgb(43, 113, 115);
+    border-left:100px solid rgb(43, 113, 115);
+    border-right:100px ridge rgb(34, 25, 93);
 }
 
-footer i:visited {
-    color:white;
+#mission-values #img-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+#mission-values img {
+    width:30%;
+    height:auto;
+    margin:0 5px;
 }
 
 @media (max-width:875px) {
+    footer h1 {
+        font-size: 1.2rem;
+    }
+
+    footer ul {
+        width:35%;
+    }
+
+    /* Home */
+
     #home-header {
         height: 350px;
     }
@@ -187,7 +225,7 @@ footer i:visited {
         font-size: 1.2rem;
     }
 
-    .home-section-title {
+    .section-title {
         font-size: 2rem;
     }
 
@@ -222,16 +260,55 @@ footer i:visited {
         color:rgb(34, 25, 93);
     }
 
-    footer h1 {
-        font-size: 1.2rem;
+    /* Mission */
+    #mission-description {
+        border-left:70px groove rgb(43, 113, 115);
+        border-right:70px solid rgb(34, 25, 93);
+    }
+    
+    #mission-description div, #mission-values div {
+        width:100%;
+        font-size: 1.1rem;
+    }
+    
+    #mission-values {
+        border-left:70px solid rgb(43, 113, 115);
+        border-right:70px ridge rgb(34, 25, 93);
     }
 
-    footer ul {
-        width:35%;
+    #mission-values #img-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #mission-values img {
+        width:70%;
+        height:30%;
+        margin:5px 0;
     }
 }
 
 @media (max-width:575px) {
+    footer {
+        justify-content: left;
+    }
+
+    footer h1 {
+        margin-left:10px;
+    }
+
+    footer ul {
+        width:80%;
+    }
+
+    footer i {
+        visibility: hidden;
+    }
+
+    /* Home */
+
     #home-header {
         height:250px;
     }
@@ -251,7 +328,7 @@ footer i:visited {
         font-size: 1rem;
     }
 
-    .home-section-title {
+    .section-title {
         font-size: 1.4rem;
     }
 
@@ -297,19 +374,39 @@ footer i:visited {
         font-size: 2.5rem;
     }
 
-    footer {
-        justify-content: left;
-    }
-
-    footer h1 {
-        margin-left:10px;
-    }
-
-    footer ul {
-        width:80%;
-    }
-
-    footer i {
+    /* Mission */
+    #mission-header {
+        height:0px;
         visibility: hidden;
+    }
+
+    #mission-description {
+        border-top: 25px groove rgb(43, 113, 115);
+        border-left:none;
+        border-right:none;
+    }
+    
+    #mission-description div, #mission-values div {
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    #mission-values {
+        border-top:25px groove rgb(34, 25, 93);
+        border-left:none;
+        border-right:none;
+    }
+
+    #mission-values #img-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #mission-values img {
+        width:85%;
+        height:30%;
+        margin:5px 0;
     }
 }
