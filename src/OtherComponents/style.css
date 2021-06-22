@@ -258,6 +258,18 @@ footer i:visited {
     height:100%;
 }
 
+/* Our Team */
+
+#mission-header {
+    width:100%;
+    height:500px;
+    max-height: 500px;
+}
+
+#mission-header img {
+    width: 100%;
+}
+
 @media (max-width:875px) {
     footer h1 {
         font-size: 1.2rem;

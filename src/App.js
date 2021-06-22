@@ -14,7 +14,7 @@ const App = () => {
   return (
     <React.Fragment>
 
-      <UserProfile />
+      {/* <UserProfile /> */}
 
       <HashRouter>
         <Navigation />
@@ -25,8 +25,7 @@ const App = () => {
           <Route path="/ourTeam" component={OurTeam} />
           <Route path="/contact" component={Contact} />
         </Switch>
-
-      <Navigation />
+      </HashRouter>
       
     </React.Fragment>
   );
