@@ -32,6 +32,10 @@ class Navigation extends Component {
                         <a href="https://twitter.com/Learnabi" target="_blank" rel="noreferrer">
                             <i className="fa fa-twitter"></i>
                         </a>
+
+                        <a href="https://learnabi.medium.com/" target="_blank" rel="noreferrer">
+                            <i className="fa fa-medium"></i>
+                        </a>
                     </div>
 
                     <div id="span" onClick={this.openMenu}>

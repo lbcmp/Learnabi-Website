@@ -8,11 +8,11 @@ export const userSlice = createSlice({
         userEmail: null
     },
     reducers: {
-        userState: (state, action) {
-            state.userName = action.payload.displayName;
-            state.userId = action.payload.id;
-            state.userEmail = action.payload.email
-        }
+        // userState: (state, action) {
+        //     state.userName = action.payload.displayName;
+        //     state.userId = action.payload.id;
+        //     state.userEmail = action.payload.email
+        // }
     }
 })
 

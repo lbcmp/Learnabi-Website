@@ -11,7 +11,8 @@ import Contact from "./OtherComponents/Contact";
 
 const App = () => {
   return (
-    <div>
+    
+    <HashRouter>
       <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -20,7 +21,7 @@ const App = () => {
         <Route path="/ourTeam" component={OurTeam} />
         <Route path="/contact" component={Contact} />
       </Switch>
-    </div>
+    </HashRouter>
   );
 };
 

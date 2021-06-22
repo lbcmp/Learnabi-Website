@@ -133,14 +133,35 @@ nav li {
     }
 }
 
-@media (max-width:500px) {
+@media (max-width:550px) {
+    #span {
+        width:30px;
+        height:20px;
+    }
+
+    #span-bar {
+        width:30px;
+    }
+
+    nav {
+        justify-content: left;
+    }
+
+    nav h1 {
+        margin:0 7.5px;
+    }
+
     #nav-links {
         width:100%;
     }
 
     .social-icons {
+        margin:0 7.5px;
+    }
+
+    .social-icons a {
         font-size: 1.5rem;
-        margin:0 5px;
+        margin:0 7px;
     }
 }
 
