@@ -17,7 +17,6 @@ class Home extends Component {
                     <div id="home-title">
                         <div>
                             <h1>learnabi</h1>
-                            <br></br>
                             <h2>Learn the way you like</h2>
                         </div>
                     </div>
