@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import Footer from './Footer'
 import MissionHeader from '../Images/Mission.jpg'
-
 import PrideFlag from '../Images/Pride.webp'
 import GenderEquality from '../Images/gender-equality.png'
 import BLM from '../Images/blm.jpg'
@@ -62,6 +62,8 @@ class Mission extends Component {
                         <img src={BLM} alt="BLM"></img>
                     </div>
                 </section>
+
+                <Footer />
             </div>
         )
     }
