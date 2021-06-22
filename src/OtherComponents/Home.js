@@ -76,8 +76,6 @@ class Home extends Component {
                 <footer>
                     <h1>learnabi</h1>
 
-                    <HashRouter><Link to="/contact"><h4>Contact Us</h4></Link></HashRouter>
-
                     <div className="social-icons">
 
                         <a href="https://www.instagram.com/learnabi/" target="_blank" rel="noreferrer">

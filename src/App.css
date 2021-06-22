@@ -101,6 +101,7 @@ nav li {
         text-align: center;
 
         display: none;
+        z-index:10000;
     }
 
     #nav-links ul {

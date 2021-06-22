@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import {HashRouter, Link} from 'react-router-dom'
 
 class Navigation extends Component {
 
@@ -16,11 +16,13 @@ class Navigation extends Component {
 
                     <div id="nav-links">
                         <ul>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/mission">Our Mission</Link></li>
-                            <li><Link to="/aboutUs">About Us</Link></li>
-                            <li><Link to="/ourTeam">Our Team</Link></li>
-                            <li><Link to="/contact">Contact Us</Link></li>
+                            <HashRouter>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/mission">Our Mission</Link></li>
+                                <li><Link to="/aboutUs">About Us</Link></li>
+                                <li><Link to="/ourTeam">Our Team</Link></li>
+                                <li><Link to="/contact">Contact Us</Link></li>
+                            </HashRouter>
                         </ul>
                     </div>
 
