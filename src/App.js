@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 import Navigation from "./OtherComponents/Navigation";
 import Home from "./OtherComponents/Home";
@@ -17,6 +17,7 @@ const App = () => {
       <UserLoginButton />
 
       <Navigation />
+      <HashRouter>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/mission" component={Mission} />
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/ourTeam" component={OurTeam} />
         <Route path="/contact" component={Contact} />
       </Switch>
+      </HashRouter>
     </React.Fragment>
   );
 };
