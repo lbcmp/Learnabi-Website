@@ -13,6 +13,7 @@ import UserProfile from "./components/user/userProfile";
 const App = () => {
   return (
     <React.Fragment>
+
       <UserProfile />
 
       <HashRouter>
@@ -24,7 +25,9 @@ const App = () => {
           <Route path="/ourTeam" component={OurTeam} />
           <Route path="/contact" component={Contact} />
         </Switch>
-      </HashRouter>
+
+      <Navigation />
+      
     </React.Fragment>
   );
 };
