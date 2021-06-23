@@ -1,5 +1,8 @@
 // import firebase from "firebase/app";
+
 // import 'firebase/database';
+
+
 // import "firebase/firestore";
 // import "firebase/auth";
 
@@ -15,10 +18,12 @@
 // firebase.initializeApp(config);
 // export const auth = firebase.auth();
 // export const firestore = firebase.firestore();
+
 // export const db = firebase.database();
 
 
 // export const providerGoogle = new firebase.auth.GoogleAuthProvider();
 // export const providerGithub = new firebase.auth.GithubAuthProvider();
+
 
 // export default firebase;
