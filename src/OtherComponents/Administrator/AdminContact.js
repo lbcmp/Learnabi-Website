@@ -36,17 +36,16 @@ class AdminContact extends Component {
 
         if (this.state.thereAreMessages) {
 
-            console.log(this.state.messageArr);
             let arr = this.state.messageArr.map(e => <AdminContactCard firstName={e.firstName} lastName={e.lastName} email={e.email} subject={e.subject} message={e.message}/>);
 
             return (
                 <div className="page-wrapper">
-                    <header id="adminContact-header">
+                    <header className="admin-header" id="admin-contact">
                         <h1>Manage Contact Page</h1>
                     </header>
 
                     <h2>Messages</h2>
-                    <div id="adminContact-container">
+                    <div className="admin-card-container">
                         {arr}
                     </div>
                 </div>
@@ -54,11 +53,11 @@ class AdminContact extends Component {
         } else {
             return (
                 <div className="page-wrapper">
-                    <header id="adminContact-header">
+                    <header className="admin-header" id="admin-contact">
                         <h1>Manage Contact Page</h1>
                     </header>
     
-                    <div id="adminContact-noMessages">
+                    <div className="admin-nothing-found">
                         <h2>There are no messages at this time.</h2>
                     </div>
                 </div>
