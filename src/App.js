@@ -25,7 +25,9 @@ const App = () => {
           <Route path="/ourTeam" component={OurTeam} />
           <Route path="/contact" component={Contact} />
         </Switch>
+
       </HashRouter>
+
       
     </React.Fragment>
   );
