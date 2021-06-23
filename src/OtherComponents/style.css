@@ -1,3 +1,9 @@
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 footer {
     width:100%;
     height:75px;
@@ -83,7 +89,7 @@ footer i:visited {
     justify-content: center;
     align-items: center;
     padding:20px 0;
-    background-color: rgba(43, 151, 141,0.8);
+    background-color: rgba(43, 151, 141, 0.8);
 }
 
 #home-goal-description {
@@ -132,7 +138,7 @@ footer i:visited {
     align-items: center;
     justify-content: space-around;
     padding:50px;
-    background-color: rgb(232, 133, 241);
+    background-color: rgba(242, 131, 113, 0.8);
 }
 
 #home-follow-along ul {
@@ -472,6 +478,11 @@ footer i:visited {
     #aboutUs-origin img {
         width:70px;
     }
+
+    /* Contact Us */
+    #contact-background section {
+        width:70%;
+    }
 }
 
 @media (max-width:575px) {
@@ -623,6 +634,11 @@ footer i:visited {
     #aboutUs-origin #triangle {
         width:0px;
         visibility: hidden;
+    }
+
+    /* Contact Us */
+    #contact-background section {
+        width:80%;
     }
     
 }

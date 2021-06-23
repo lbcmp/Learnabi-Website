@@ -81,6 +81,7 @@ class Contact extends Component {
                             <textarea type="text" 
                                     name="message" 
                                     placeholder="Enter a maximum of 1000 characters" 
+                                    maxlength="1000"
                                     value={this.state.message}
                                     onChange={this.messageChange} >
                             </textarea>
