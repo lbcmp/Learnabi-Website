@@ -4,34 +4,55 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles((theme) => ({
   googleButton: {
-    backgroundColor: "blue",
-    color: "white",
-    width: "24vh",
-    margin: "1vh",
-    fontSize: "1.5vh",
+    fontSize:"1.75rem",
+    background:"none",
+    // border:"none",
+    border:"1px solid blue",
+    boxShadow:"none",
     "&:hover": {
-      backgroundColor: "blue",
-      fontSize: "1.6vh",
-    },
+      color:"#DD70EA",
+      background:"none",
+      border:"none",
+      boxShadow:"none",
+    }
+    // backgroundColor: "blue",
+    // color: "white",
+    // width: "24vh",
+    // margin: "1vh",
+    // fontSize: "1.5vh",
+    // "&:hover": {
+    //   backgroundColor: "blue",
+    //   fontSize: "1.6vh",
+    // },
   },
 
   githubButton: {
-    backgroundColor: "black",
-    color: "white",
-    width: "24vh",
-    margin: "1vh",
-    fontSize: "1.5vh",
+    fontSize:"1.75rem",
+    background:"none",
+    // border:"none",
+    border:"1px solid blue",
+    boxShadow:"none",
     "&:hover": {
-      backgroundColor: "black",
-      fontSize: "1.6vh",
-    },
+      color:"#DD70EA",
+      background:"none",
+      border:"none",
+      boxShadow:"none",
+    }
+    // backgroundColor: "black",
+    // color: "white",
+    // width: "24vh",
+    // margin: "1vh",
+    // fontSize: "1.5vh",
+    // "&:hover": {
+    //   backgroundColor: "black",
+    //   fontSize: "1.6vh",
+    // },
   },
 }));
 
 const CustomButton = ({ btnName, styleC, clicked}) => {
   // styleC: true = google
   const classes = useStyles();
-
   return (
     <div>
       <Button
@@ -39,7 +60,8 @@ const CustomButton = ({ btnName, styleC, clicked}) => {
         onClick={clicked}
         className={styleC ? classes.googleButton : classes.githubButton}
       >
-        {btnName}
+        <i className={styleC ? "fa fa-google" : "fa fa-github"}></i>
+        {/* {btnName} */}
       </Button>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {HashRouter, Link} from 'react-router-dom'
+import UserProfile from '../components/user/userProfile'
 
 class Navigation extends Component {
 
@@ -27,17 +28,7 @@ class Navigation extends Component {
                     </div>
 
                     <div className="social-icons">
-                        <a href="https://www.instagram.com/learnabi/" target="_blank" rel="noreferrer">
-                            <i className="fa fa-instagram"></i>
-                        </a>
-
-                        <a href="https://twitter.com/Learnabi" target="_blank" rel="noreferrer">
-                            <i className="fa fa-twitter"></i>
-                        </a>
-
-                        <a href="https://learnabi.medium.com/" target="_blank" rel="noreferrer">
-                            <i className="fa fa-medium"></i>
-                        </a>
+                        <UserProfile />
                     </div>
 
                     <div id="span" onClick={this.openMenu}>

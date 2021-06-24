@@ -84,7 +84,8 @@ const UserLoginButton = () => {
 
   let btns =
     user === null ? (
-      <div>
+      <div id="sign-in-div">
+        <h4>Sign in: </h4>
         <CustomButton
           styleC={true}
           clicked={signInWithGoogle}
