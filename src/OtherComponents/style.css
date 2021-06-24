@@ -89,7 +89,7 @@ footer i:visited {
     justify-content: center;
     align-items: center;
     padding:20px 0;
-    background-color: rgba(43, 151, 141, 0.8);
+    background-color: rgb(43, 151, 141);
 }
 
 #home-goal-description {
@@ -109,12 +109,16 @@ footer i:visited {
 }
 
 #home-goal-description h2 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     margin-right:10px;
 }
 
+#home-goal-description b {
+    font-weight:400;
+}
+
 #home-goal-description p {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 #home-goal-description img {
@@ -125,11 +129,13 @@ footer i:visited {
 
 #home-goal-description a {
     text-decoration: none;
-    color:black;
+    color:white;
     font-size: 1.4rem;
 }
 
-/*--*/
+#home-goal-description a:hover {
+    color:#F7B5FF;
+}
 
 #home-follow-along {
     width:100%;
@@ -155,6 +161,10 @@ footer i:visited {
     margin:30px;
     font-size: 4rem;
     color:rgb(34, 25, 93);
+}
+
+#home-social-icons a:hover {
+    color:rgb(61, 55, 124);
 }
 
 /* Mission */

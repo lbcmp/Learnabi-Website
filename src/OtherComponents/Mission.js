@@ -17,25 +17,25 @@ class Mission extends Component {
 
                 <section id="mission-description">
                     <div>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac vestibulum mauris, 
-                            volutpat fermentum diam. Quisque in mauris ullamcorper lorem faucibus fermentum. Nulla 
-                            facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, felis 
-                            a volutpat porta, magna dui semper diam, eget finibus libero quam 
+                        <p> School curriculums, which are meant to educate and foster valuable skills in students, 
+                            oftentimes fail them instead. They are outdated, rigid, and unrelatable; designed in 
+                            such a way that some students are left feeling disinterested in what they are learning, 
+                            or discouraged due to academic pressure. As a result, many fall behind, especially those 
+                            who are chronically absent or struggling with the fast-pased nature of everything. 
                         </p><br></br>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac vestibulum mauris, 
-                            volutpat fermentum diam. Quisque in mauris ullamcorper lorem faucibus fermentum. Nulla 
-                            facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, felis 
-                            a volutpat porta, magna dui semper diam, eget finibus libero quam 
+                        <p> The question we need to ask is: what does the student need? We at Learnabi aim to provide a 
+                            source of education that keeps students engaged, informed and motivated. We put them at the 
+                            very center of our product, and give them the opportunity to choose how they will learn and 
+                            the type of content they consume, all at their own pace.
                         </p><br></br>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac vestibulum mauris, 
-                            volutpat fermentum diam. Quisque in mauris ullamcorper lorem faucibus fermentum. Nulla 
-                            facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, felis 
-                            a volutpat porta, magna dui semper diam, eget finibus libero quam 
+                        <p> We are currently working on the Learnabi app, where students can make 2 minute long videos 
+                            ranging from Mathematics and Science, all the way to How to Cook. Students will also be able 
+                            to create a profile and be a part of our community, where they can browse content made by other 
+                            students. If the students wants additional help, they can comment on videos, private message 
+                            others, or start group chats. 
                         </p><br></br>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac vestibulum mauris, 
-                            volutpat fermentum diam. Quisque in mauris ullamcorper lorem faucibus fermentum. Nulla 
-                            facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, felis 
-                            a volutpat porta, magna dui semper diam, eget finibus libero quam 
+                        <p> All in all, we aim to create a collaborative environment that embraces the individuality of each 
+                            student and gives them the tools to advance their own education as they see fit. 
                         </p>
                     </div>
                 </section>
@@ -44,15 +44,12 @@ class Mission extends Component {
 
                 <section id="mission-values">
                     <div>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac vestibulum mauris, 
-                            volutpat fermentum diam. Quisque in mauris ullamcorper lorem faucibus fermentum. Nulla 
-                            facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, felis 
-                            a volutpat porta, magna dui semper diam, eget finibus libero quam 
-                        </p><br></br>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac vestibulum mauris, 
-                            volutpat fermentum diam. Quisque in mauris ullamcorper lorem faucibus fermentum. Nulla 
-                            facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, felis 
-                            a volutpat porta, magna dui semper diam, eget finibus libero quam 
+                        <p>We at Learnabi embrace diversity and inclusivity.</p>
+                        <br></br>
+                        <p> We strive to make learning accessible and equitable for everyone willing to learn. 
+                            And so we are working diligently to make our platform a safe, positive space where students can 
+                            help and build each other up. We ask that our users be respectful of their peers, no matter their 
+                            background, race or identity. Any bullying of any kind will not be tolerated or permitted.
                         </p>
                     </div>
 

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import {HashRouter, Link} from 'react-router-dom'
+
 import HeaderImage from '../Images/background.jpg'
 import HammerImage from '../Images/hammer-icon.png'
 import AppImage from '../Images/app-preview.png'
-import {HashRouter, Link} from 'react-router-dom'
+import Cofounders from '../Images/cofounders-home-page.jpeg'
 import Footer from './Footer'
 import './style.css'
 
@@ -23,26 +25,26 @@ class Home extends Component {
                     </div>
                 </header>
 
-                <h1 className="section-title">An app that lets students learn at their own pace</h1>
+                <h1 className="section-title">An app that lets the students decide</h1>
                 <section id="home-brief-goal">
 
                     <div id="home-goal-description">
                         <div>
-                            <h2>In progress</h2>
+                            <h2><b>In progress</b></h2>
                             <img src={HammerImage} alt="Hammer"></img>
                         </div>
 
                         <br></br>
 
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac vestibulum mauris, 
-                            volutpat fermentum diam. Quisque in mauris ullamcorper lorem faucibus fermentum. Nulla 
-                            facilisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, felis 
-                            a volutpat porta, magna dui semper diam, eget finibus libero quam 
+                        <p> We at Learnabi understand that there is no one-size-fits-all approach to learning, and sometimes 
+                            students need support outside the classroom, too. So we are creating an app that aims to provide 
+                            learners of all ages with a space to explore subjects, chat with friends, and choose what to tackle 
+                            next. Join the waitlist to be one of the first to try our app!
                         </p>
 
                         <br></br>
 
-                        <HashRouter><Link to="/mission">&gt; Learn more about our mission &lt;</Link></HashRouter>
+                        <p>&gt; <a href="https://airtable.com/shr8p8CneM1Un9WAs" target="_blank" rel="noreferrer">Join the Waitlist</a> &lt;</p>
                     </div>
 
                     <div id="home-goal-img-div">
@@ -51,10 +53,11 @@ class Home extends Component {
 
                 </section>
 
-                <h1 className="section-title">Follow along our journey</h1>
+                <h1 className="section-title">Follow along on our journey</h1>
                 <section id="home-follow-along"> 
                     <ul>
                         <li>Follow us on Instagram and Twitter for the latest updates</li>
+                        <br></br>
                         <li>Subscribe to our weekly blog, where we dig deeper into learnabi and important causes</li>
                     </ul>
 
@@ -71,6 +74,7 @@ class Home extends Component {
                             <i className="fa fa-medium"></i>
                         </a>
                     </div>
+
                 </section>
 
                 <Footer />
