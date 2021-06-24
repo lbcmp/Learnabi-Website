@@ -8,7 +8,7 @@ import Mission from "./OtherComponents/Mission";
 import AboutUs from "./OtherComponents/AboutUs";
 import OurTeam from "./OtherComponents/OurTeam";
 import Contact from "./OtherComponents/Contact";
-import UserProfile from "./components/user/userProfile";
+// import UserProfile from "./components/user/userProfile";
 
 import AdminLogin from "./components/admin/adminLogin";
 

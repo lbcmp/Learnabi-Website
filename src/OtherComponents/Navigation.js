@@ -27,7 +27,7 @@ class Navigation extends Component {
                         </ul>
                     </div>
 
-                    <div className="social-icons">
+                    <div>
                         <UserProfile />
                     </div>
 

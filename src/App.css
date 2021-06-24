@@ -53,7 +53,6 @@ nav li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border:1px solid red;
 }
 
 .social-icons a {

@@ -6,8 +6,7 @@ const useStyles = makeStyles((theme) => ({
   googleButton: {
     fontSize:"1.75rem",
     background:"none",
-    // border:"none",
-    border:"1px solid blue",
+    border:"none",
     boxShadow:"none",
     "&:hover": {
       color:"#DD70EA",
@@ -29,8 +28,7 @@ const useStyles = makeStyles((theme) => ({
   githubButton: {
     fontSize:"1.75rem",
     background:"none",
-    // border:"none",
-    border:"1px solid blue",
+    border:"none",
     boxShadow:"none",
     "&:hover": {
       color:"#DD70EA",
@@ -54,7 +52,7 @@ const CustomButton = ({ btnName, styleC, clicked}) => {
   // styleC: true = google
   const classes = useStyles();
   return (
-    <div>
+    <div style={{width:"40px", display:"flex", justifyContent:"center", alignItems:"center"}}>
       <Button
         variant="contained"
         onClick={clicked}
