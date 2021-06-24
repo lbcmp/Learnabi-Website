@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, useState } from "react";
 import "./App.css";
 import { HashRouter, Switch, Route } from "react-router-dom";
 
@@ -10,13 +10,11 @@ import OurTeam from "./OtherComponents/OurTeam";
 import Contact from "./OtherComponents/Contact";
 import UserProfile from "./components/user/userProfile";
 
-import AdminLogin from "./components/admin/adminLogin";
-
 import AdminContact from "./OtherComponents/Administrator/AdminContact";
 import AdminTeam from "./OtherComponents/Administrator/AdminTeam";
 
-
 const App = () => {
+ 
   return (
     <React.Fragment>
 
@@ -33,6 +31,7 @@ const App = () => {
           <Route path="/contact" component={Contact} />
           <Route path="/adminContact" component={AdminContact} />
           <Route path="/adminTeam" component={AdminTeam} />
+          
         </Switch>
 
       </HashRouter>
