@@ -30,8 +30,9 @@
 //       });
 //   }
 // };
-// export const signIn = (email, password) => {
-//   if (email.length > 15 && password.length === 8) {
+
+// export const signIn = (email, password, m) => {
+//   if (email.length > 15 && password.length >= 8) {
 //     auth
 //       .signInWithEmailAndPassword(email, password)
 //       .then((userCredential) => {
@@ -39,8 +40,11 @@
 //         // console.log(user);
 //       })
 //       .catch((error) => {
-//         console.log(error.code);
+//         // console.log(error.code);
 //         console.log(error.message);
+//         alert(error.message);
+       
+  
 //       });
 //   }
 // };
