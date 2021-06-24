@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   auth,
   providerGoogle,
@@ -11,6 +11,7 @@ import {
   userReset,
   selectEmail,
 } from "../../redux/user/userSlice";
+import { selectAdminEmail } from "../../redux/admin/adminSlice";
 import { useSelector, useDispatch } from "react-redux";
 import CustomButton from "./customButton";
 
@@ -19,12 +20,22 @@ const UserLoginButton = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectName);
   const email = useSelector(selectEmail);
+  const adminEmail = useSelector(selectAdminEmail);
 
   const signInWithGoogle = () => {
-    auth.signInWithRedirect(providerGoogle);
+    if (adminEmail === null) {
+      auth.signInWithRedirect(providerGoogle);
+    } else {
+      alert("Please log out from the Admin Account");
+    }
   };
+
   const signInWithGithub = () => {
-    auth.signInWithRedirect(providerGithub);
+    if (adminEmail === null) {
+      auth.signInWithRedirect(providerGithub);
+    } else {
+      alert("Please Log out from the Admin Account");
+    }
   };
 
   const signOut = () => {
@@ -33,51 +44,53 @@ const UserLoginButton = () => {
   };
 
   useEffect(() => {
-    
-    function dispatchUser(name, email, photo, id) {
-      dispatch(
-        userState({
-          displayName: name,
-          email: email,
-          photoUrl: photo,
-          user_id: id,
-        })
-      );
-    }
-    
-      const unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
-        if (!userAuth) return;
-        const userRef = firestore.doc(`learnabiUsers/${userAuth.uid}`);
-        // console.log(userAuth);
-        const snapShot = await userRef.get(); //snapShot from cloud firestore
-
-        // .exists checks the document for validation => false = not created
-        if (!snapShot.exists) {
-          const { displayName, email, photoURL, uid } = userAuth;
-          const userId = uid;
-          const createdAt = new Date();
-
-          try {
-            await userRef.set({
-              displayName,
-              email,
-              photoURL,
-              userId,
-              createdAt,
-            });
-            dispatchUser(displayName, email, photoURL, userId);
-          } catch (error) {
-            console.log("error creating user", error.message);
+    if (adminEmail === null) {
+      function dispatchUser(name, email, photo, id) {
+        dispatch(
+          userState({
+            displayName: name,
+            userEmail: email,
+            photoUrl: photo,
+            user_id: id,
+          })
+        );
+      }
+     
+        const unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
+          if (!userAuth) return;
+          if(userAuth.email !== 'admin@learnabi.com'){
+            const userRef = firestore.doc(`learnabiUsers/user:${userAuth.uid}`);
+            // console.log(userAuth);
+            const snapShot = await userRef.get(); //snapShot from cloud firestore
+  
+            // .exists checks the document for validation => false = not created
+            if (!snapShot.exists) {
+              const { displayName, email, photoURL, uid } = userAuth;
+              const userId = uid.substring(0,6);
+              const createdAt = new Date();
+  
+              try {
+                await userRef.set({
+                  displayName,
+                  email,
+                  photoURL,
+                  userId,
+                  createdAt,
+                });
+                dispatchUser(displayName, email, photoURL, userId);
+              } catch (error) {
+                console.log("error creating user", error.message);
+              }
+            } else {
+              const { displayName, email, photoURL, userId } = snapShot.data();
+              dispatchUser(displayName, email, photoURL, userId);
+            }
           }
-        } else {
-          const { displayName, email, photoURL, userId } = snapShot.data();
-          dispatchUser(displayName, email, photoURL, userId);
-        }
-      });
-    return unsubscribe;
-    
-    
-  }, [dispatch]);
+        });
+        return unsubscribe;
+      
+    }
+  }, [dispatch, adminEmail]);
 
   // reverse substring
   let em = email ? email.substring(email.lastIndexOf("@") + 1) : "";

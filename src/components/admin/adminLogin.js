@@ -6,6 +6,7 @@ import {
   adminState,
   selectAdminEmail,
 } from "../../redux/admin/adminSlice";
+import { selectName } from "../../redux/user/userSlice";
 import Form from "./form";
 
 const AdminLogin = () => {
@@ -13,56 +14,76 @@ const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginBoolean, setLoginBoolean] = useState(false);
+  const [adminBoolean, setAdminBoolean] = useState(true);
   const adminEmail = useSelector(selectAdminEmail);
+  const userLogin = useSelector(selectName);
 
   useEffect(() => {
-    if (loginBoolean) {
+    if (loginBoolean && userLogin === null) {
       signIn(email, password);
       setLoginBoolean(false);
     }
-    function dispatchAdmin(adminEmail) {
-      dispatch(
-        adminState({
-          email: adminEmail,
-        })
-      );
-    }
 
-    const unsubscribe = auth.onAuthStateChanged(async (adminAuth) => {
-      if (!adminAuth) return;
-      const userRef = firestore.doc(`learnabiAdmin/${adminAuth.uid}`); // path to the database
-
-      const snapShot = await userRef.get(); //snapShot from cloud firestore
-
-      if (!snapShot.exists) {
-        const { email } = adminAuth;
-        const createdAt = new Date();
-        try {
-          await userRef.set({
-            email,
-            createdAt,
-          });
-          dispatchAdmin(email);
-        } catch (error) {
-          console.log(error.message);
-        }
-      } else {
-        const { email } = snapShot.data();
-        dispatchAdmin(email);
-        setPassword("");
-        setEmail("");
+    if (userLogin === null) {
+      function dispatchAdmin(adminEmail) {
+        dispatch(
+          adminState({
+            email: adminEmail,
+          })
+        );
       }
-    });
-    return unsubscribe;
-  }, [dispatch, loginBoolean, email, password]);
+
+      const unsubscribe = auth.onAuthStateChanged(async (adminAuth) => {
+        if (!adminAuth) return;
+        // console.log(adminAuth.email);
+        if (adminAuth.email === 'admin@learnabi.com') {
+          const userRef = firestore.doc(`learnabiUsers/admin:${adminAuth.uid}`); // path to the database
+
+          const snapShot = await userRef.get(); //snapShot from cloud firestore
+
+          if (!snapShot.exists) {
+            const { email } = adminAuth;
+            const createdAt = new Date();
+            try {
+              await userRef.set({
+                email,
+                createdAt,
+              });
+              dispatchAdmin(email);
+            } catch (error) {
+              console.log(error.message);
+            }
+          } else {
+            const { email } = snapShot.data();
+            dispatchAdmin(email);
+            setPassword("");
+            setEmail("");
+          }
+        }
+      });
+      return unsubscribe;
+    }
+  }, [dispatch, loginBoolean, email, password, userLogin, adminBoolean]);
 
   const authEmailPassword = (event) => {
     event.preventDefault();
     const p = password.length;
-    (p < 8 && p !== 0) || (p > 8 && p !== 0)
-      ? <div> {alert("Password does not match the password's length")} {setPassword('')} </div>
-      : setLoginBoolean(true);
-    <div>{email.length < 2 ? alert("Email is invalid") : email}</div>;
+    if (userLogin === null) {
+      (p < 8 && p !== 0) || (p > 8 && p !== 0) ? (
+        <div>
+          {" "}
+          {alert("Password does not match the password's length")}{" "}
+          {setPassword("")}{" "}
+        </div>
+      ) : (
+        <div>
+          {userLogin === null ? <div>{setLoginBoolean(true)}</div> : null}
+        </div>
+      );
+      <div>{email.length < 2 ? alert("Email is invalid") : email}</div>;
+    } else {
+      alert("Please Log out from the user Account");
+    }
   };
 
   const onChangeHandlerEmail = (event) => {
@@ -85,6 +106,7 @@ const AdminLogin = () => {
     setPassword("");
     setEmail("");
     setLoginBoolean(false);
+    setAdminBoolean(false);
   };
 
   return (

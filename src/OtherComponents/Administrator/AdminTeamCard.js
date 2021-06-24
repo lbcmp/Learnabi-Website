@@ -23,8 +23,8 @@ const AdminTeamCard = ({
   name,
   title,
   description,
-  handlerDelete,
-  handlerEdit,
+  clickedHandlerDeleteCard,
+  clickedHandlerEditCard,
 }) => {
   const classes = useStyles();
   return (
@@ -47,10 +47,10 @@ const AdminTeamCard = ({
           </Typography>
         </CardContent>
       <CardActions>
-        <Button onClick={handlerEdit} size="small" color="primary">
+        <Button onClick={clickedHandlerEditCard} size="small" color="primary">
           Edit
         </Button>
-        <Button onClick={handlerDelete} size="small" color="primary">
+        <Button onClick={clickedHandlerDeleteCard} size="small" color="primary">
           Delete
         </Button>
       </CardActions>

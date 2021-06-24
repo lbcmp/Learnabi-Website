@@ -12,12 +12,12 @@ export const userSlice = createSlice({
   reducers: {
     userState: (state, action) => {
       state.userName = action.payload.displayName;
-      state.userEmail = action.payload.email;
+      state.userEmail = action.payload.userEmail;
       state.userPhotoUrl = action.payload.photoUrl;
       state.userId = action.payload.user_id;
       state.userAccount =
-        action.payload.email.substring(
-          action.payload.email.lastIndexOf("@") + 1
+        action.payload.userEmail.substring(
+          action.payload.userEmail.lastIndexOf("@") + 1
         ) === "gmail.com"
           ? "Gmail"
           : "GitHub";
