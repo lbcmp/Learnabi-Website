@@ -21,10 +21,10 @@ const UserLoginButton = () => {
   const email = useSelector(selectEmail);
 
   const signInWithGoogle = () => {
-    // auth.signInWithRedirect(providerGoogle);
+    auth.signInWithRedirect(providerGoogle);
   };
   const signInWithGithub = () => {
-    // auth.signInWithRedirect(providerGithub);
+    auth.signInWithRedirect(providerGithub);
   };
 
   const signOut = () => {
@@ -45,36 +45,36 @@ const UserLoginButton = () => {
       );
     }
     
-      // const unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
-      //   if (!userAuth) return;
-      //   const userRef = firestore.doc(`learnabiUsers/${userAuth.uid}`);
-      //   // console.log(userAuth);
-      //   const snapShot = await userRef.get();
+      const unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
+        if (!userAuth) return;
+        const userRef = firestore.doc(`learnabiUsers/${userAuth.uid}`);
+        // console.log(userAuth);
+        const snapShot = await userRef.get(); //snapShot from cloud firestore
 
-      //   // .exists checks the document for validation => false = not created
-      //   if (!snapShot.exists) {
-      //     const { displayName, email, photoURL, uid } = userAuth;
-      //     const userId = uid;
-      //     const createdAt = new Date();
+        // .exists checks the document for validation => false = not created
+        if (!snapShot.exists) {
+          const { displayName, email, photoURL, uid } = userAuth;
+          const userId = uid;
+          const createdAt = new Date();
 
-      //     try {
-      //       await userRef.set({
-      //         displayName,
-      //         email,
-      //         photoURL,
-      //         userId,
-      //         createdAt,
-      //       });
-      //       dispatchUser(displayName, email, photoURL, userId);
-      //     } catch (error) {
-      //       console.log("error creating user", error.message);
-      //     }
-      //   } else {
-      //     const { displayName, email, photoURL, userId } = snapShot.data();
-      //     dispatchUser(displayName, email, photoURL, userId);
-      //   }
-      // });
-    // return unsubscribe
+          try {
+            await userRef.set({
+              displayName,
+              email,
+              photoURL,
+              userId,
+              createdAt,
+            });
+            dispatchUser(displayName, email, photoURL, userId);
+          } catch (error) {
+            console.log("error creating user", error.message);
+          }
+        } else {
+          const { displayName, email, photoURL, userId } = snapShot.data();
+          dispatchUser(displayName, email, photoURL, userId);
+        }
+      });
+    return unsubscribe;
     
     
   }, [dispatch]);
