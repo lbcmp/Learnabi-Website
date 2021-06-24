@@ -9,12 +9,14 @@ import AboutUs from "./OtherComponents/AboutUs";
 import OurTeam from "./OtherComponents/OurTeam";
 import Contact from "./OtherComponents/Contact";
 import UserProfile from "./components/user/userProfile";
+import AdminLogin from "./components/admin/adminLogin";
 
 const App = () => {
   return (
     <React.Fragment>
 
       {/* <UserProfile /> */}
+      {/* <AdminLogin/> */}
 
       <HashRouter>
         <Navigation />

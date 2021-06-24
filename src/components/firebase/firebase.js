@@ -1,8 +1,4 @@
-// import firebase from "firebase/app";
-
-// import 'firebase/database';
-
-
+// import firebase from "firebase";
 // import "firebase/firestore";
 // import "firebase/auth";
 
@@ -19,11 +15,34 @@
 // export const auth = firebase.auth();
 // export const firestore = firebase.firestore();
 
-// export const db = firebase.database();
-
-
 // export const providerGoogle = new firebase.auth.GoogleAuthProvider();
 // export const providerGithub = new firebase.auth.GithubAuthProvider();
-
+// export const signUp = (email, password) => {
+//   if (email.length > 16 && password.length === 8) {
+//     auth
+//       .createUserWithEmailAndPassword(email, password)
+//       .then((userCredential) => {
+//         let user = userCredential.user;
+//         // console.log(user);
+//       })
+//       .catch((error) => {
+//         console.log(error.code);
+//       });
+//   }
+// };
+// export const signIn = (email, password) => {
+//   if (email.length > 15 && password.length === 8) {
+//     auth
+//       .signInWithEmailAndPassword(email, password)
+//       .then((userCredential) => {
+//         let user = userCredential.user;
+//         // console.log(user);
+//       })
+//       .catch((error) => {
+//         console.log(error.code);
+//         console.log(error.message);
+//       });
+//   }
+// };
 
 // export default firebase;
