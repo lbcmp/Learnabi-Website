@@ -9,7 +9,12 @@ import AboutUs from "./OtherComponents/AboutUs";
 import OurTeam from "./OtherComponents/OurTeam";
 import Contact from "./OtherComponents/Contact";
 import UserProfile from "./components/user/userProfile";
+
 import AdminLogin from "./components/admin/adminLogin";
+
+import AdminContact from "./OtherComponents/Administrator/AdminContact";
+import AdminTeam from "./OtherComponents/Administrator/AdminTeam";
+
 
 const App = () => {
   return (
@@ -26,6 +31,8 @@ const App = () => {
           <Route path="/aboutUs" component={AboutUs} />
           <Route path="/ourTeam" component={OurTeam} />
           <Route path="/contact" component={Contact} />
+          <Route path="/adminContact" component={AdminContact} />
+          <Route path="/adminTeam" component={AdminTeam} />
         </Switch>
 
       </HashRouter>

@@ -1,0 +1,88 @@
+#adminContact-header {
+    width:100%;
+    height:250px;
+    background-color: rgb(34, 25, 93);
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#adminContact-container {
+    width:90%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin:20px;
+    padding:20px;
+    border:2px solid grey;
+    border-radius: 10px;
+}
+
+#adminContact-noMessages {
+    width:500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:50px;
+    border:2px solid grey;
+    border-radius: 10px;
+    color:red;
+    text-align: center;
+    padding:20px;
+}
+
+.contactCard {
+    position: relative;
+    width:500px;
+    height:auto;
+
+    display: flex;
+    flex-direction: column;
+
+    margin:3px;
+
+    background-color: rgba(43, 151, 141, 0.8);
+    border-left:7.5px groove rgb(34, 25, 93);
+}
+
+.contactCard h4 {
+    margin:3px 0;
+}
+
+.contactCard b {
+    font-weight: 700;
+}
+
+.contactCard #content {
+    padding:10px;
+    margin-bottom:35px;
+}
+
+.contactCard #button-container {
+    width:100%;
+    position: absolute;
+    bottom:0;
+}
+
+.contactCard button {
+    float:right;
+    width:75px;
+    padding:7px 3px;
+    border:1px solid black;
+    background-color:rgba(247, 102, 102, 0.9);
+}
+
+@media (max-width:575px) {
+    #adminContact-noMessages {
+        width:90%;
+        font-size: 0.9rem;
+    }
+
+    #adminContact-container {
+        width:100%;
+        padding:5px;
+        border:none;
+    }
+}
