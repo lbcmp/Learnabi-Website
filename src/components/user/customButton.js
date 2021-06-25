@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
       background:"none",
       border:"none",
       boxShadow:"none",
-    }
+    },
     // backgroundColor: "blue",
     // color: "white",
     // width: "24vh",
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
       background:"none",
       border:"none",
       boxShadow:"none",
-    }
+    },
     // backgroundColor: "black",
     // color: "white",
     // width: "24vh",

@@ -3,8 +3,8 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles({
   inputStyle: {
-    height: "6vh",
-    width: "30vh",
+    height: "7vh",
+    width: "45vh",
     margin: "1vh",
     textAlign: "center",
     borderRadius: "1vh",
@@ -33,7 +33,7 @@ const AdminFormNewEmployee = ({
   email,
   handlerName,
   handlerNewForm,
-  handlerEditForm,
+  handlerEditNewForm,
   handlerImage,
   handlerEmail
 }) => {
@@ -43,7 +43,7 @@ const AdminFormNewEmployee = ({
     <>
       {editBoolean ? <h3>Edit Employee</h3> : <h3>Add New Employee</h3>}
 
-      <form onSubmit={editBoolean ? handlerEditForm : handlerNewForm}>
+      <form onSubmit={editBoolean ? handlerEditNewForm : handlerNewForm}>
         <input
           className={classes.inputStyle}
           name="name"

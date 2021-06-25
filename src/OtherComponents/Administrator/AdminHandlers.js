@@ -30,7 +30,7 @@ export const updateEmployeeHandler = (email, name, title, image) => {
     })
 }
 export const deleteEmployeeHandler = (path) => {
-    const snapShot = firestore.doc(path);
+    const snapShot = firestore.collection('learnabiEmployees').doc(path);
     snapShot.delete().then(() => {
         alert('Employee has been deleted successfully')
     }).catch((error) => {

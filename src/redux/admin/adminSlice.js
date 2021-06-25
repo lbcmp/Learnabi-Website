@@ -4,7 +4,7 @@ export const adminSlice = createSlice({
   name: "admin",
   initialState: {
     adminEmail: null,
-    adminError: null
+    
   },
   reducers: {
     adminState: (state, action) => {
@@ -12,13 +12,11 @@ export const adminSlice = createSlice({
     },
     adminLogOut: (state) => {
       state.adminEmail = null;
-    },
-    adminError: (state, action) => {
-      state.adminError = action.payload.error;
     }
+    
   },
 });
-export const { adminState, adminLogOut, adminError } = adminSlice.actions;
+export const { adminState, adminLogOut } = adminSlice.actions;
 
 export const selectAdminEmail = (state) => state.admin.adminEmail;
 export const selectAdminError = (state) => state.admin.adminError;
