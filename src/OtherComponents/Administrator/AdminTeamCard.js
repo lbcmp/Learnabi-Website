@@ -15,14 +15,14 @@ const useStyles = makeStyles({
   },
   media: {
     height: 190,
+    width: '50vh'
   },
 });
-
+// connected to AdminTeam.j
 const AdminTeamCard = ({
   photo,
   name,
   title,
-  description,
   clickedHandlerDeleteCard,
   clickedHandlerEditCard,
 }) => {
@@ -41,9 +41,6 @@ const AdminTeamCard = ({
           </Typography>
           <Typography gutterBottom component="h2">
             {title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {description}
           </Typography>
         </CardContent>
       <CardActions>

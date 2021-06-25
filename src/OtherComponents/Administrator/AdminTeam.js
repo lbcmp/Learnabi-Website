@@ -3,11 +3,19 @@ import "./admin.css";
 import AdminLogin from "../../components/admin/adminLogin";
 import AdminTeamCard from "./AdminTeamCard";
 import pic from "../../Images/cofounders.png";
-import { selectAdminEmail } from "../../redux/admin/adminSlice";
-import { useSelector } from "react-redux";
+import { selectAdminEmail,  } from "../../redux/admin/adminSlice";
+import { useSelector, useDispatch } from "react-redux";
 import AdminFormNewEmployee from "./AdminFormEmployee";
-import { newEmployeeSubmitHandler } from "./AdminHandlers";
+import { deleteEmployeeHandler, newEmployeeSubmitHandler } from "./AdminHandlers";
 import { firestore } from "../../components/firebase/firebase";
+import {
+  selectEmployeeName,
+  selectEmployeeEmail,
+  selectEmployeeImage,
+  employeeState,
+  selectEmployeeTitle
+} from "../../redux/employee/employeeSlice.js";
+import { updateEmployeeHandler } from "./AdminHandlers";
 
 const AdminTeam = () => {
   const adminEmail = useSelector(selectAdminEmail);
@@ -17,8 +25,14 @@ const AdminTeam = () => {
   const [title, setTitle] = useState("");
   const [email, setEmail] = useState("");
   const [adminEmployeeData, setAdminEmployeeData] = useState([]);
+  const dispatch = useDispatch();
+  const employeeName = useSelector(selectEmployeeName);
+  const employeeEmail = useSelector(selectEmployeeEmail);
+  const employeeImage = useSelector(selectEmployeeImage);
+  const employeeTitle = useSelector(selectEmployeeTitle);
 
   useEffect(() => {
+    
     firestore
       .collection("learnabiEmployees")
       .get()
@@ -33,6 +47,7 @@ const AdminTeam = () => {
     newEmployeeSubmitHandler(email, name, title, image);
     reset();
   };
+
   const onHandlerImage = (event) => {
     setImage(event.target.value);
   };
@@ -45,9 +60,30 @@ const AdminTeam = () => {
   const onHandlerEmail = (event) => {
     setEmail(event.target.value);
   };
-  const onHandlerEditForm = () => {
+  const onHandlerEditForm = (employeeId, image, name, tittle ) => {
+    // set boolean to true for use in AdminFormNewEmployee.js
+    setEditBoolean(true);
+    dispatch(employeeState({
+      name: name,
+      email: employeeId,
+      image: image,
+      title: tittle
+    }))
+    setName(employeeName);
+    setImage(employeeImage);
+    setTitle(employeeTitle);
+    setEmail(employeeEmail);
     
   };
+  const onHandlerEditNewForm = (e) =>{
+    e.preventDefault();
+    updateEmployeeHandler(email, name, title, image);
+    reset();
+  }
+  const onHandlerDeleteCard = (path)=> {
+    deleteEmployeeHandler(path);
+  }
+  
   const reset = () => {
     setEmail("");
     setTitle("");
@@ -65,7 +101,7 @@ const AdminTeam = () => {
             <AdminFormNewEmployee
               editBoolean={editBoolean}
               handlerNewForm={onHandlerNewForm}
-              handlerEditForm={onHandlerEditForm}
+              handlerEditNewForm={onHandlerEditNewForm}
               image={image}
               title={title}
               name={name}
@@ -76,7 +112,7 @@ const AdminTeam = () => {
               handlerImage={onHandlerImage}
             />
           </div>
-          <div>
+          <div style={{display: 'flex', flexFlow: 'wrap' }}>
             {adminEmployeeData.map((item) => (
               <AdminTeamCard
                 key={item.EmployeeId}
@@ -85,11 +121,15 @@ const AdminTeam = () => {
                 title={item.Tittle}
                 clickedHandlerEditCard={() =>
                   onHandlerEditForm(
+                    item.EmployeeId,
                     item.Image,
                     item.Name,
-                    item.Title
+                    item.Tittle,
+                    
                   )
+                  
                 }
+                clickedHandlerDeleteCard={() => onHandlerDeleteCard(item.EmployeeId)}
               />
             ))}
           </div>
